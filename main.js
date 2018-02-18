@@ -409,3 +409,10 @@ function startFireworks() {
     ctx.font = opts.charSize + 'px Verdana';
   })
 }
+// check if browser supports service workers
+// if so register service worker to go Offline First!
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/sw.js')
+    .then(() => {console.log("This sweet service worker is registered!"); })
+}
